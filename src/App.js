@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Dropdown from "./component/Dropdown";
 
 function App() {
+  const options = [
+    "HTML",
+    "CSS",
+    "Javascript",
+    "MongoDB",
+    "Express",
+    "React",
+    "Node",
+  ];
+  const [selected, setSelected] = useState("Choose One");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="heading">Akhil's Dropdown</h1>
+      {/* dropdown imported */}
+      <Dropdown
+        options={options}
+        selected={selected}
+        setSelected={setSelected}
+      />
     </div>
   );
 }
